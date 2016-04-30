@@ -99,9 +99,14 @@ export default class MapLike {
     /**
      * delete value for key
      * @param {string} key
+     * @returns {boolean}
      */
     delete(key) {
-        this._store[key] = null;
+        if (this._store[key]) {
+            this._store[key] = null;
+            return true;
+        }
+        return false;
     }
 
     /**
