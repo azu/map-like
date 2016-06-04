@@ -17,7 +17,7 @@
   },
   "version": "1.0.0",
   "description": "ECMAScript Map like object.",
-  "main": "index.js",
+  "main": "lib/MapLike.js",
   "directories": {
     "test": "test"
   },
@@ -32,7 +32,8 @@
   "keywords": [
     "map",
     "es6",
-    "structure"
+    "structure",
+    "polyfill"
   ],
   "devDependencies": {
     "babel-cli": "^6.7.5",
