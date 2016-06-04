@@ -1,25 +1,40 @@
 // LICENSE : MIT
 "use strict";
-const assert = require("assert");
+// constants
+const NanSymbolMark = {};
+function encodeKey(key) {
+    const isNotNumber = typeof key === "number" && key !== key;
+    return isNotNumber ? NanSymbolMark : key;
+}
+function decodeKey(encodedKey) {
+    return (encodedKey === NanSymbolMark) ? NaN : encodedKey;
+}
 /*
  ES6 Map like object.
  This is not iterable.
  */
 export default class MapLike {
     constructor(entries = []) {
-        this._store = Object.create(null);
+        /**
+         * @type {Array}
+         * @private
+         */
+        this._keys = [];
+        /**
+         *
+         * @type {Array}
+         * @private
+         */
+        this._values = [];
         entries.forEach(entry => {
-            assert(Array.isArray(entry), "new MapLike([ [key, value] ])");
-            assert(entry.length == 2, "new MapLike([ [key, value] ])");
+            if (!Array.isArray(entry)) {
+                throw new Error("should be `new MapLike([ [key, value] ])`");
+            }
+            if (entry.length !== 2) {
+                throw new Error("should be `new MapLike([ [key, value] ])`");
+            }
             this.set(entry[0], entry[1]);
         });
-    }
-
-    /**
-     * @returns {Object}
-     */
-    toJSON() {
-        return this._store;
     }
 
     /**
@@ -27,7 +42,7 @@ export default class MapLike {
      * @returns {Number}
      */
     get size() {
-        return this.keys().length;
+        return this._values.filter(value => value !== undefined).length;
     }
 
     /**
@@ -35,10 +50,8 @@ export default class MapLike {
      * @returns {Array}
      */
     entries() {
-        const keys = this.keys();
-        const store = this._store;
-        return keys.map(key => {
-            return [key, store[key]];
+        return this._keys.map(key => {
+            return [decodeKey(this._keys[key]), this._values[key]];
         });
     }
 
@@ -47,7 +60,7 @@ export default class MapLike {
      * @returns {Array}
      */
     keys() {
-        return Object.keys(this._store).reverse();
+        return this._keys.map(decodeKey);
     }
 
     /**
@@ -55,15 +68,7 @@ export default class MapLike {
      * @returns {Array}
      */
     values() {
-        /* eslint-disable guard-for-in */
-        const keys = this.keys();
-        const store = this._store;
-        const results = [];
-        keys.forEach(key => {
-            results.push(store[key]);
-        });
-        return results;
-        /* eslint-enable guard-for-in */
+        return this._values;
     }
 
     /**
@@ -71,7 +76,8 @@ export default class MapLike {
      * @returns {*}
      */
     get(key) {
-        return this._store[key];
+        const idx = this._keys.indexOf(encodeKey(key));
+        return (idx !== -1) ? this._values[idx] : undefined;
     }
 
 
@@ -81,7 +87,7 @@ export default class MapLike {
      * @returns {boolean}
      */
     has(key) {
-        return this.get(key) != null;
+        return (this._keys.indexOf(encodeKey(key)) !== -1);
     }
 
 
@@ -92,7 +98,13 @@ export default class MapLike {
      * @return {MapLike}
      */
     set(key, value) {
-        this._store[key] = value;
+        const idx = this._keys.indexOf(encodeKey(key));
+        if (idx !== -1) {
+            this._values[idx] = value;
+        } else {
+            this._keys.push(encodeKey(key));
+            this._values.push(value);
+        }
         return this;
     }
 
@@ -102,11 +114,11 @@ export default class MapLike {
      * @returns {boolean}
      */
     delete(key) {
-        if (this._store[key]) {
-            this._store[key] = null;
-            return true;
-        }
-        return false;
+        const idx = this._keys.indexOf(encodeKey(key));
+        if (idx === -1) return false;
+        delete this._keys[idx];
+        delete this._values[idx];
+        return true;
     }
 
     /**
@@ -114,19 +126,19 @@ export default class MapLike {
      * @returns {MapLike}
      */
     clear() {
-        this._store = Object.create(null);
+        this._keys = [];
+        this._values = [];
         return this;
     }
 
     /**
      * forEach map
-     * @param {Function} handler
+     * @param {function(value, key, map)} handler
      */
     forEach(handler) {
-        this.keys().forEach(key => {
-            if (key !== null || key !== undefined) {
-                handler(this.get(key), key, this);
-            }
+        this._keys.forEach(key => {
+            // value, key, map
+            handler(this.get(key), key, this);
         });
     }
 }
