@@ -26,64 +26,82 @@ map.set("newKey", "newValue");
 
 ## API
 
-### `size`
+### size
 
-Returns: **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** - 
+return map size
 
-### `entries(): Array`
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
-Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** - 
+### entries
 
-### `keys(): Array`
+entries \[[key, value], [key, value]] value
 
-Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** - 
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
 
-### `values(): Array`
+### keys
 
-Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** - 
+get keys
 
-### `get(key: string): Any`
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
 
-**Parameters**
+### values
 
--   `key`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+get values
 
-Returns: **Any** - 
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
 
-### `has(key): boolean`
-
-**Parameters**
-
--   `key`
-
-Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** - 
-
-### `set(key: Any, value: Any): MapLike`
+### get
 
 **Parameters**
 
--   `key`: **Any**
--   `value`: **Any**
+-   `key` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-Returns: **MapLike** - 
+Returns **Any** 
 
-### `delete(key: string): boolean`
+### has
 
-**Parameters**
-
--   `key`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
-
-Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** - 
-
-### `clear(): MapLike`
-
-Returns: **MapLike** - 
-
-### `forEach(handler: function (value, key, map))`
+has value of key
 
 **Parameters**
 
--   `handler`: **function (value, key, [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map))**
+-   `key`  
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### set
+
+set value for key
+
+**Parameters**
+
+-   `key` **Any** 
+-   `value` **Any** 
+
+Returns **MapLike** 
+
+### delete
+
+delete value for key
+
+**Parameters**
+
+-   `key` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### clear
+
+clear defined key,value
+
+Returns **MapLike** 
+
+### forEach
+
+forEach map
+
+**Parameters**
+
+-   `handler` **function (value, key, [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map))** 
 
 ## Changelog
 
