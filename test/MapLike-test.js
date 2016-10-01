@@ -93,6 +93,20 @@ describe("MapLike", function () {
         expect(o["delete"](o));
     });
 
+    it(".delete() and .entries()", function () {
+        expect(o.keys().length).to.be(0);
+        expect(o.values().length).to.be(0);
+        o.set(callback, generic);
+        o.set(generic, callback);
+        o.set(o, callback);
+        expect(o.has(callback) && o.has(generic) && o.has(o)).to.be(true);
+        o["delete"](callback);
+        o["delete"](generic);
+        o["delete"](o);
+        expect(o.keys().length).to.be(0);
+        expect(o.values().length).to.be(0);
+    });
+
     it("does not throw an error when a non-object key is used", function () {
         expect(function () {
             o.set("key", o);
@@ -144,15 +158,16 @@ describe("MapLike", function () {
     });
 
     it("implements .forEach()", function () {
-        var o = new Map(), i;
+        var o = new Map();
         o.set("key 0", 0);
         o.set("key 1", 1);
-        o.forEach(function (value, key, obj) {
+        o.forEach((value, key, obj) => {
             expect(key).to.be("key " + value);
             expect(obj).to.be(o);
             // even if dropped, keeps looping
             o["delete"](key);
         });
+        console.log(o);
         expect(o.size).to.be(0);
     });
 

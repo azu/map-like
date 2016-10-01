@@ -135,4 +135,4 @@ MIT © azu
 
 ## Thanks
 
-Test `MapLike` with test-case of https://github.com/Financial-Times/polyfill-service/blob/master/polyfills/Map/tests.js.
+Test `MapLike` with test-case of <https://github.com/Financial-Times/polyfill-service/blob/master/polyfills/Map/tests.js>.

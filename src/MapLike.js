@@ -50,7 +50,7 @@ export default class MapLike {
      * @returns {Array}
      */
     entries() {
-        return this._keys.map(key => {
+        return this.keys().map(key => {
             return [decodeKey(this._keys[key]), this._values[key]];
         });
     }
@@ -60,7 +60,7 @@ export default class MapLike {
      * @returns {Array}
      */
     keys() {
-        return this._keys.map(decodeKey);
+        return this._keys.filter(value => value !== undefined).map(decodeKey);
     }
 
     /**
@@ -115,9 +115,11 @@ export default class MapLike {
      */
     delete(key) {
         const idx = this._keys.indexOf(encodeKey(key));
-        if (idx === -1) return false;
-        delete this._keys[idx];
-        delete this._values[idx];
+        if (idx === -1) {
+            return false;
+        }
+        this._keys.splice(idx, 1);
+        this._values.splice(idx, 1);
         return true;
     }
 
@@ -136,7 +138,7 @@ export default class MapLike {
      * @param {function(value, key, map)} handler
      */
     forEach(handler) {
-        this._keys.forEach(key => {
+        this.keys().forEach(key => {
             // value, key, map
             handler(this.get(key), key, this);
         });
