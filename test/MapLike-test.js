@@ -167,7 +167,6 @@ describe("MapLike", function () {
             // even if dropped, keeps looping
             o["delete"](key);
         });
-        console.log(o);
         expect(o.size).to.be(0);
     });
 
