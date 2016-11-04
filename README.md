@@ -26,76 +26,81 @@ map.set("newKey", "newValue");
 
 ## API
 
-### `size`
+### `MapLike`
+
+ES6 Map like object.
+See [Map - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map "Map - JavaScript | MDN")
+
+#### `size`
 
 return map size
 
 Returns: **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
 
-### `entries(): Array`
+#### `entries(): Array`
 
 entries \[[key, value], [key, value]] value
 
 Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
 
-### `keys(): Array`
+#### `keys(): Array`
 
 get keys
 
 Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
 
-### `values(): Array`
+#### `values(): Array`
 
 get values
 
 Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
 
-### `get(key: string): Any`
+#### `get(key: Any): Any`
 
 **Parameters**
 
-- `key`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+- `key`: **Any** - The key of the element to return from the Map object.
 
 Returns: **Any**
 
-### `has(key): boolean`
+#### `has(key: Any): boolean`
 
 has value of key
 
 **Parameters**
 
-- `key`
+- `key`: **Any** - The key of the element to return from the Map object.
 
 Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
-### `set(key: Any, value: Any): MapLike`
+#### `set(key: Any, value: Any): MapLike`
 
 set value for key
 
 **Parameters**
 
-- `key`: **Any**
+- `key`: **Any** - The key of the element to return from the Map object.
 - `value`: **Any**
 
 Returns: **MapLike**
 
-### `delete(key: string): boolean`
+#### `delete(key: Any): boolean`
 
 delete value for key
 
 **Parameters**
 
-- `key`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+- `key`: **Any** - The key of the element to return from the Map object.
 
 Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
-### `clear(): MapLike`
+#### `clear(): MapLike`
 
 clear defined key,value
 
 Returns: **MapLike**
 
-### `forEach(handler: function (value, key, map))`
+#### `forEach(handler: function (value, key, map))`
 
 forEach map
 

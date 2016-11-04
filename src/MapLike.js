@@ -9,9 +9,9 @@ function encodeKey(key) {
 function decodeKey(encodedKey) {
     return (encodedKey === NanSymbolMark) ? NaN : encodedKey;
 }
-/*
- ES6 Map like object.
- This is not iterable.
+/**
+ * ES6 Map like object.
+ * See [Map - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map "Map - JavaScript | MDN")
  */
 export default class MapLike {
     constructor(entries = []) {
@@ -72,7 +72,7 @@ export default class MapLike {
     }
 
     /**
-     * @param {string} key
+     * @param {*} key - The key of the element to return from the Map object.
      * @returns {*}
      */
     get(key) {
@@ -83,7 +83,7 @@ export default class MapLike {
 
     /**
      * has value of key
-     * @param key
+     * @param {*} key - The key of the element to return from the Map object.
      * @returns {boolean}
      */
     has(key) {
@@ -93,7 +93,7 @@ export default class MapLike {
 
     /**
      * set value for key
-     * @param {*} key
+     * @param {*} key - The key of the element to return from the Map object.
      * @param {*} value
      * @return {MapLike}
      */
@@ -110,7 +110,7 @@ export default class MapLike {
 
     /**
      * delete value for key
-     * @param {string} key
+     * @param {*} key - The key of the element to return from the Map object.
      * @returns {boolean}
      */
     delete(key) {
