@@ -6,8 +6,8 @@ It has same API with [Map - JavaScript | MDN](https://developer.mozilla.org/en-U
 
 ## Limitation :warning:
 
--   Not support `Symbol.Iterator` - it means `MapLike` is not iterable. 
--   Not support `toString()`
+- Not support `Symbol.Iterator` - it means `MapLike` is not iterable. 
+- Not support `toString()`
 
 ## Install
 
@@ -26,82 +26,82 @@ map.set("newKey", "newValue");
 
 ## API
 
-### size
+### `size`
 
 return map size
 
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+Returns: **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
 
-### entries
+### `entries(): Array`
 
 entries \[[key, value], [key, value]] value
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
 
-### keys
+### `keys(): Array`
 
 get keys
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
 
-### values
+### `values(): Array`
 
 get values
 
-Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+Returns: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**
 
-### get
+### `get(key: string): Any`
 
 **Parameters**
 
--   `key` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+- `key`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
-Returns **Any** 
+Returns: **Any**
 
-### has
+### `has(key): boolean`
 
 has value of key
 
 **Parameters**
 
--   `key`  
+- `key`
 
-Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
-### set
+### `set(key: Any, value: Any): MapLike`
 
 set value for key
 
 **Parameters**
 
--   `key` **Any** 
--   `value` **Any** 
+- `key`: **Any**
+- `value`: **Any**
 
-Returns **MapLike** 
+Returns: **MapLike**
 
-### delete
+### `delete(key: string): boolean`
 
 delete value for key
 
 **Parameters**
 
--   `key` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+- `key`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
-Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns: **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**
 
-### clear
+### `clear(): MapLike`
 
 clear defined key,value
 
-Returns **MapLike** 
+Returns: **MapLike**
 
-### forEach
+### `forEach(handler: function (value, key, map))`
 
 forEach map
 
 **Parameters**
 
--   `handler` **function (value, key, [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map))** 
+- `handler`: **function (value, key, [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map))**
 
 ## Changelog
 
@@ -118,16 +118,16 @@ Install devDependencies and Run `npm test`:
 Pull requests and stars are always welcome.
 For bugs and feature requests, [please create an issue](https://github.com/azu/map-like/issues).
 
-1.  Fork it!
-2.  Create your feature branch: `git checkout -b my-new-feature`
-3.  Commit your changes: `git commit -am 'Add some feature'`
-4.  Push to the branch: `git push origin my-new-feature`
-5.  Submit a pull request :D
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ## Author
 
--   [github/azu](https://github.com/azu)
--   [twitter/azu_re](http://twitter.com/azu_re)
+- [github/azu](https://github.com/azu)
+- [twitter/azu_re](http://twitter.com/azu_re)
 
 ## License
 
