@@ -4,6 +4,17 @@ ECMAScript `Map` like class.
 
 It has same API with [Map - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map "Map - JavaScript | MDN").
 
+It is tiny library - 1.5kB(gzip).
+
+```
+✈ bundle-size map-like
+map-like@1.0.3
+
+env  bundle   minify   gzip
+--   5.73 kB  3.08 kB  1.5 kB
+```
+
+
 ## Limitation :warning:
 
 - Not support `Symbol.Iterator` - it means `MapLike` is not iterable. 
