@@ -18,6 +18,7 @@
   "version": "1.0.3",
   "description": "ECMAScript Map like object.",
   "main": "lib/MapLike.js",
+  "types": "lib/MapLike.d.ts",
   "directories": {
     "test": "test"
   },
