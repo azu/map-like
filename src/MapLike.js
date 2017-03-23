@@ -136,11 +136,12 @@ export default class MapLike {
     /**
      * forEach map
      * @param {function(value, key, map)} handler
+     * @param {*} [thisArg]
      */
-    forEach(handler) {
+    forEach(handler, thisArg) {
         this.keys().forEach(key => {
             // value, key, map
-            handler(this.get(key), key, this);
+            handler(this.get(key), key, thisArg || this);
         });
     }
 }
