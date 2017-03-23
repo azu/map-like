@@ -17,7 +17,4 @@ declare class MapLike<K, V> {
 
     readonly size: number;
 }
-
-interface MapLikeConstructor {
-}
 export default MapLike;
