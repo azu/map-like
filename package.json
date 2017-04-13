@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/azu/map-like/issues"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ECMAScript Map like object.",
   "main": "lib/MapLike.js",
   "types": "lib/MapLike.d.ts",
