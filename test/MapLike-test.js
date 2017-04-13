@@ -93,7 +93,7 @@ describe("MapLike", function () {
         expect(o["delete"](o));
     });
 
-    it(".delete() and .entries()", function () {
+    it(".delete()", function () {
         expect(o.keys().length).to.be(0);
         expect(o.values().length).to.be(0);
         o.set(callback, generic);
@@ -106,6 +106,17 @@ describe("MapLike", function () {
         expect(o.keys().length).to.be(0);
         expect(o.values().length).to.be(0);
     });
+
+    it(".entries()", function() {
+        o.set(callback, generic);
+        o.set(generic, callback);
+        o.set(o, callback);
+        var entries = o.entries();
+        expect(entries[0]).to.eql([callback, generic]);
+        expect(entries[1]).to.eql([generic, callback]);
+        expect(entries[2]).to.eql([o, callback]);
+    });
+
 
     it("does not throw an error when a non-object key is used", function () {
         expect(function () {

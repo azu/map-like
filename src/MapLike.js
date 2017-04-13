@@ -51,7 +51,8 @@ export default class MapLike {
      */
     entries() {
         return this.keys().map(key => {
-            return [decodeKey(this._keys[key]), this._values[key]];
+            var value = this.get(key);
+            return [decodeKey(key), value];
         });
     }
 
