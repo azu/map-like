@@ -7,6 +7,8 @@ declare class MapLike<K, V> {
 
     entries(): [K, V][];
 
+    keys(): K[];
+
     values(): V[];
 
     get(key: K): V | undefined;
