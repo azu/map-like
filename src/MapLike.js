@@ -2,13 +2,16 @@
 "use strict";
 // constants
 const NanSymbolMark = {};
+
 function encodeKey(key) {
     const isNotNumber = typeof key === "number" && key !== key;
     return isNotNumber ? NanSymbolMark : key;
 }
+
 function decodeKey(encodedKey) {
     return (encodedKey === NanSymbolMark) ? NaN : encodedKey;
 }
+
 /**
  * ES6 Map like object.
  * See [Map - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map "Map - JavaScript | MDN")
@@ -69,7 +72,7 @@ export default class MapLike {
      * @returns {Array}
      */
     values() {
-        return this._values;
+        return this._values.slice();
     }
 
     /**

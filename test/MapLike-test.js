@@ -107,6 +107,11 @@ describe("MapLike", function () {
         expect(o.values().length).to.be(0);
     });
 
+    it(".delete()", function () {
+        // !==
+        expect(o.values()).not.to.be(o.values());
+    });
+
     it(".entries()", function() {
         o.set(callback, generic);
         o.set(generic, callback);
