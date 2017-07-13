@@ -1,4 +1,4 @@
-import Map from "../src/MapLike";
+import { MapLike as Map } from "../src/MapLike";
 const expect = require('expect.js');
 describe("MapLike", function () {
     let o, generic, callback;

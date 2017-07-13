@@ -6,14 +6,11 @@ It has same API with [Map - JavaScript | MDN](https://developer.mozilla.org/en-U
 
 It is tiny library - 1.5kB(gzip).
 
-```
-✈ bundle-size map-like
-map-like@1.0.3
+    ✈ bundle-size map-like
+    map-like@1.0.3
 
-env  bundle   minify   gzip
---   5.73 kB  3.08 kB  1.5 kB
-```
-
+    env  bundle   minify   gzip
+    --   5.73 kB  3.08 kB  1.5 kB
 
 ## Limitation :warning:
 
@@ -29,7 +26,7 @@ Install with [npm](https://www.npmjs.com/):
 ## Usage
 
 ```js
-const MapLike = require("map-like");
+const { MapLike } = require("map-like");
 const map = new MapLike(["key", "value"]);
 const value = map.get("key");
 map.set("newKey", "newValue");
@@ -111,13 +108,14 @@ clear defined key,value
 
 Returns: **MapLike**
 
-#### `forEach(handler: function (value, key, map))`
+#### `forEach(handler: function (value, key, map), thisArg: [Any])`
 
 forEach map
 
 **Parameters**
 
 - `handler`: **function (value, key, [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map))**
+- `thisArg`: **\[Any]**
 
 ## Changelog
 

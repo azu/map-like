@@ -19,4 +19,4 @@ declare class MapLike<K, V> {
 
     readonly size: number;
 }
-export default MapLike;
+export { MapLike };
