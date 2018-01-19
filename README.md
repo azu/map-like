@@ -4,7 +4,7 @@ ECMAScript `Map` like class.
 
 It has same API with [Map - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map "Map - JavaScript | MDN").
 
-It is tiny library - 1.5kB(gzip).
+This library is tiny - 1.5kB(gzip).
 
     ✈ bundle-size map-like
     map-like@1.0.3
@@ -14,8 +14,20 @@ It is tiny library - 1.5kB(gzip).
 
 ## Limitation :warning:
 
-- Not support `Symbol.Iterator` - it means `MapLike` is not iterable. 
+- Not support `Symbol.Iterator`
+  - This means that `MapLike` object is not iterable. 
+- Return `Array` insteadof `Iterator` object.
+  - `MapLike#values()`, `MapLike#keys()`, `MapLike#entries()` return a `Array`.
 - Not support `toString()`
+
+## Why Map-**like**?
+
+I've created Map-like to avoid `Symbol.iterator`.
+Because, the transpiled code of `Iterator` has a run-time cost at the current moment.
+
+- [Faster Collection Iterators | Benedikt Meurer](http://benediktmeurer.de/2017/07/14/faster-collection-iterators/ "Faster Collection Iterators | Benedikt Meurer")
+
+So, `MapLike` does not support `Iterator` object.
 
 ## Install
 
