@@ -1,4 +1,4 @@
-# map-like [![Build Status](https://travis-ci.org/azu/map-like.svg?branch=master)](https://travis-ci.org/azu/map-like)
+# map-like [![Actions Status: test](https://github.com/azu/map-like.svg/workflows/test/badge.svg)](https://github.com/azu/map-like.svg/actions?query=workflow%3A"test")
 
 ECMAScript `Map` like class.
 
